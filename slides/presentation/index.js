@@ -3,6 +3,7 @@ import React from 'react';
 
 // Import Spectacle Core tags
 import {
+  Appear,
   BlockQuote,
   Cite,
   Code,
@@ -30,8 +31,9 @@ require('normalize.css');
 require('spectacle/lib/themes/default/index.css');
 
 const images = {
-  serlo: require('../assets/serlo_logo.svg')
 };
+
+import Me from './Me';
 
 preloader(images);
 
@@ -40,7 +42,7 @@ const theme = createTheme(
     primary: '#F8F8F8',
     secondary: '#404040',
     tertiary: '#007EC1',
-    quartenary: '#95bc1a'
+    quartenary: 'pink'
   },
   {
     primary: "'Open Sans'"
@@ -57,55 +59,25 @@ export default class Presentation extends React.Component {
             width={500}
           />
           <Text margin="10px 0 0" textColor="secondary" bold>
-            Jonas Keinholz
+            Victor SABATIER
           </Text>
-        </Slide>
-        <Slide bgColor="primary">
-          <Heading size={1} lineHeight={1} textColor="secondary">
-            About me
-          </Heading>
-          <Link href="https://de.serlo.org">
-            <Image src={images.serlo} width={500} />
-          </Link>
-          <List textColor="secondary" style={{ listStylePosition: 'outside' }}>
-            <ListItem>
-              <Link
-                href="https://github.com/serlo-org/serlo-abc"
-                textColor="tertiary"
-              >
-                Serlo ABC
-              </Link>
-              ,
-              a free literacy app written in React Native
-            </ListItem>
-            <ListItem>
-              <Link href="http://editor.ory.am/" textColor="tertiary">
-                ORY Editor
-              </Link>
-              ,
-              an extensible, modern WYSI editor for the web written in React
-            </ListItem>
-          </List>
           <Text textColor="secondary">
-            Check me out on{' '}
-            <Link href="https://github.com/inyono" textColor="tertiary">
+            <Link href="https://github.com/sabativi" textColor="tertiary">
               <i className="fa fa-github" aria-hidden="true" />
             </Link>
             {' '}
-            <Link href="https://medium.com/@inyono" textColor="tertiary">
-              <i className="fa fa-medium" aria-hidden="true" />
-            </Link>
-            {' '}
-            <Link href="https://twitter.com/inyono" textColor="tertiary">
+            <Link href="https://twitter.com/sabativi" textColor="tertiary">
               <i className="fa fa-twitter" aria-hidden="true" />
             </Link>
             {' '}
-            (inyono)
           </Text>
+        </Slide>
+        <Slide bgColor="primary">
+          <Me />
         </Slide>
         <Slide bgColor="primary" align="center flex-start">
           <Heading size={1} fit lineHeight={1} textColor="secondary">
-            Life without Storybook
+            The problem
           </Heading>
           <div
             style={{
@@ -125,7 +97,7 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="primary" align="center flex-start">
           <Heading size={1} fit lineHeight={1} textColor="secondary">
-            Storybook to the rescue
+            The solution
           </Heading>
           <div
             style={{
@@ -144,24 +116,34 @@ export default class Presentation extends React.Component {
         </Slide>
         <Slide bgColor="primary" align="center flex-start">
           <Heading size={1} lineHeight={1} fit textColor="secondary">
-            Why is this awesome?
+            What gains ?
           </Heading>
           <List textColor="secondary" style={{ listStylePosition: 'outside' }}>
-            <ListItem>
-              Seperates your dummy code used solely for testing from your production app (especially good for React Native and Electron)
-            </ListItem>
-            <ListItem>
-              Encourages you to write reusable components and think about the API first (similar to TDD)
-            </ListItem>
-            <ListItem>
-              Stories serve as documentation for your components
-            </ListItem>
-            <ListItem>
-              Designers can view the components easily and give the devs feedback
-            </ListItem>
-            <ListItem>
-              Devs can work independently from each other
-            </ListItem>
+            <Appear>
+              <ListItem>
+                Seperates your dummy code used solely for testing from your production app
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Encourages you to write reusable components and think about the API first ( similar to TDD - Xavier don't judge me 😄)
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Stories serve as documentation for your components
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Designers can view the components easily and give the devs feedback
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                Devs can work independently from each other
+              </ListItem>
+            </Appear>
           </List>
         </Slide>
         <CodeSlide
@@ -175,7 +157,6 @@ export default class Presentation extends React.Component {
               { loc: [17, 18], note: 'Mock callbacks using `action`'},
               { loc: [30, 36], note: 'Second story for the account data step' },
               { loc: [36, 46], note: 'Third story for the account data step' },
-              { loc: [9, 16], note: 'Wrap all stories (because Material UI)' },
               { loc: [1, 2] }
           ]}
         />
@@ -191,21 +172,24 @@ export default class Presentation extends React.Component {
               <Link href="http://airbnb.io/react-dates/" textColor="tertiary">react-dates</Link> (React Storybook)
             </ListItem>
             <ListItem>
-              <Link href="https://github.com/serlo-org/serlo-abc" textColor="tertiary">Serlo ABC</Link> (React Native Storybook)
+              <Link href="https://storybook.js.org/basics/guide-vue/" textColor="tertiary">For Vue</Link> (Vue Storybook)
+            </ListItem>
+            <ListItem>
+              <Link href="https://storybook.js.org/basics/guide-angular/" textColor="tertiary">For Angular</Link> (Angular Storybook)
             </ListItem>
           </List>
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={1} fit lineHeight={1} textColor="secondary">
-            Setup (React Storybook)
+          <Heading size={2} lineHeight={1} textColor="secondary">
+            Setup
           </Heading>
-          <Text textColor="secondary" style={{ marginTop: '20px' }}>In an existing React app:</Text>
+          <Text textColor="secondary" style={{ marginTop: '20px' }}>In an existing app:</Text>
           <List textColor="secondary" style={{ listStylePosition: 'outside' }}>
             <ListItem>
               <Code>npm install --global getstorybook</Code>
             </ListItem>
             <ListItem>
-              <Code>cd my-react-app</Code>
+              <Code>cd my-app</Code>
             </ListItem>
             <ListItem>
               <Code>getstorybook</Code>
@@ -218,70 +202,86 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide bgColor="primary">
-          <Heading size={1} fit lineHeight={1} textColor="secondary">
-            Setup (React Native Storybook)
+          <Heading size={3} lineHeight={1} textColor="secondary">
+            Addons : superpowers
           </Heading>
-          <Text textColor="secondary" style={{ marginTop: '20px' }}>In an existing (vanilla) React Native app:</Text>
           <List textColor="secondary" style={{ listStylePosition: 'outside' }}>
             <ListItem>
-              <Code>npm install --global getstorybook</Code>
+              <Text>Enhance storybook</Text>
             </ListItem>
             <ListItem>
-              <Code>cd my-react-native-app</Code>
+              <Text>Strong community</Text>
             </ListItem>
             <ListItem>
-              <Code>getstorybook</Code>
-            </ListItem>
-          </List>
-          <List textColor="secondary" style={{ listStylePosition: 'outside' }}>
-            <ListItem>
-              Start your Storybook with <Code>npm run storybook</Code> (replaces the React Native packager)
-            </ListItem>
-            <ListItem>
-              Start your app, e.g. with <Code>react-native run-ios</Code>
+              <Text>Easily extensible</Text>
             </ListItem>
           </List>
         </Slide>
-        <Slide bgColor="primary">
-          <Heading size={1} fit lineHeight={1} textColor="secondary">
-            Setup (Create React Native App)
+        <Slide>
+          <Heading size={2} lineHeight={1} textColor="secondary">
+            How I use it
           </Heading>
-          <Text textColor="secondary" style={{ marginTop: '20px' }}>
-            For setting up React Native Storybook in a Create React Native App or Expo app,
-            see <Link textColor="tertiary" href="https://medium.com/@inyono/using-react-native-storybook-with-create-react-native-app-471e531bb128">my blog post</Link>
-          </Text>
-        </Slide>
-        <Slide bgColor="primary">
-          <Heading size={1} fit lineHeight={1} textColor="secondary">
-            Storybook Addons
-          </Heading>
-          <Text textColor="secondary" style={{ marginTop: '20px' }}>
-            See <Link textColor="tertiary" href="https://storybooks.js.org/docs/react-storybook/addons/addon-gallery/">Addon Gallery</Link>
-          </Text>
           <List textColor="secondary" style={{ listStylePosition: 'outside' }}>
-            <ListItem>
-              <Link textColor="tertiary" href="https://github.com/storybooks/storybook/tree/master/packages/storyshots">
-                StoryShots
-              </Link>:
-              create Jest Snapshots from stories
-            </ListItem>
-            <ListItem>
-              <Link textColor="tertiary" href="https://github.com/storybooks/storybook/tree/master/packages/addon-knobs">
-                Knobs
-              </Link>:
-              edit React props dynamically using in the Storybook UI
-            </ListItem>
-            <ListItem>
-              <Link textColor="tertiary" href="https://github.com/storybooks/storybook/tree/master/packages/addon-notes">
-                Notes
-              </Link> and{' '}
-              <Link textColor="tertiary" href="https://github.com/storybooks/storybook/tree/master/packages/addon-info">
-                Info
-              </Link>:
-              show additional information for your stories
-            </ListItem>
+            <Appear>
+              <ListItem>
+                <Text>Start from a sketch file</Text>
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                <Text>Extract common components</Text>
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                <Text>Write stories for each of them</Text>
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                <Text>Both React and React Native Project</Text>
+              </ListItem>
+            </Appear>
           </List>
-          <Text textColor="secondary">Disclaimer: unfortunately, a couple of addons don't work with React Native Storybook</Text>
+        </Slide>
+        <Slide>
+          <Heading size={2} lineHeight={1} textColor="secondary">
+            Addons I use
+          </Heading>
+          <List textColor="secondary" style={{ listStylePosition: 'outside' }}>
+            <Appear>
+              <ListItem>
+                <Link href="https://github.com/storybooks/storybook/tree/release/3.4/addons/info" textColor="tertiary">Info</Link> ( Nice documentation  out of the box )
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                <Link href="https://github.com/storybooks/storybook-addon-console" textColor="tertiary">Console</Link> ( Redirect console to action logger, useful for debug )
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                <Link href="https://github.com/abhiaiyer91/apollo-storybook-decorator" textColor="tertiary">Apollo</Link> ( Mock graphql queries to inject data into your stories)
+              </ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide>
+          <Heading size={2} lineHeight={1} textColor="secondary">
+            Example
+          </Heading>
+          <List textColor="secondary" style={{ listStylePosition: 'outside' }}>
+            <Appear>
+              <ListItem>
+                React Native
+              </ListItem>
+            </Appear>
+            <Appear>
+              <ListItem>
+                <Link href="http://localhost:6006" textColor="tertiary">Web</Link>
+              </ListItem>
+            </Appear>
+          </List>
         </Slide>
         <Slide>
           <Heading size={1} fit lineHeight={1} textColor="secondary">

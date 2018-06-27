@@ -30,14 +30,14 @@ storiesOf('Step 1: AccountData', module)
   ))
   .add('with email', () => (
     <AccountDataStep
-      state={{ email: 'jonas@keinholz.com' }}
+      state={{ email: 'victor@reactivic.com' }}
       setState={setState}
     />
   ))
   .add('with email and passwords', () => (
     <AccountDataStep
       state={{
-        email: 'jonas@keinholz.com',
+        email: 'victor@reactivic.com',
         password: 'secure',
         passwordRepeat: 'secure'
       }}
